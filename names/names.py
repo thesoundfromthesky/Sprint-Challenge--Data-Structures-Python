@@ -56,3 +56,22 @@ print (f"runtime: {end_time - start_time} seconds")
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
+
+# start_time2 = time.time()
+# # f = open('names_1.txt', 'r')
+# f = open('./names/names_1.txt', 'r')
+# names_1 = f.read().split("\n")  # List containing 10000 names
+# f.close()
+
+# # f = open('names_2.txt', 'r')
+# f = open('./names/names_2.txt', 'r')
+# names_2 = f.read().split("\n")  # List containing 10000 names
+# f.close()
+# dup=[]
+# for name_1 in names_1:
+#     if name_1 in names_2:
+#         dup.append(name_1)
+# end_time2 = time.time()
+
+# print (f"{len(dup)} duplicates:\n\n{', '.join(dup)}\n\n")
+# print (f"runtime: {end_time2 - start_time2} seconds")
