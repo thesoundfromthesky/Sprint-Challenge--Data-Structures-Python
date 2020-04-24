@@ -48,10 +48,35 @@ class RingBuffer:
 
 class ArrayRingBuffer:
     def __init__(self, capacity):
-        pass
+        self.capacity = capacity
+        #current will be index 0
+        self.current = 0
+        #use python array instead of doubly linked list
+        self.storage = [None] * self.capacity 
 
     def append(self, item):
-        pass
+        #assign item to current array
+        self.storage[self.current]= item
+        #increment current index by 1 which is the next oldest index
+        self.current += 1
+        #if current index has reached capacity            
+        if self.current >= self.capacity:
+            #assign 0 to current
+            self.current = 0
 
     def get(self):
-        pass
+     # Note:  This is the only [] allowed
+     list_buffer_contents = [] 
+     # TODO: Your code here
+     #assign self storage to list buffer
+     for i in self.storage:
+         #if i exists
+         if i:
+             list_buffer_contents.append(i) 
+     return list_buffer_contents
+
+#advantage of using array over ddl
+#fast random access compared to ddl
+#disadvnatage of using array over ddl
+#slow to insert an element to middle of array
+#slow to increase size of array
